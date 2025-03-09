@@ -19,6 +19,7 @@ if [[ -z ${INSTANCE_ID} ]]; then
     exit 1
 fi
 
-aws --profile ${PROFILE} ssm start-session --target ${INSTANCE_ID} \
---document-name AWS-StartPortForwardingSession \
---parameters '{"portNumber":["3001"],"localPortNumber":["3002"]}'
+aws --profile ${PROFILE} ssm start-session \
+    --target ${INSTANCE_ID} \
+    --document-name AWS-StartPortForwardingSession \
+    --parameters '{"portNumber":["3001"],"localPortNumber":["3002"]}'

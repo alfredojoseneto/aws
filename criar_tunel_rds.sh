@@ -38,6 +38,9 @@ if [[ -z ${RDS_DNS} ]]; then
 fi
 
 # establish the rds tunnel
-aws --profile ${PROFILE} ssm start-session --target ${INSTANCE_ID} \
---document-name AWS-StartPortForwardingSessionToRemoteHost \
---parameters '{"host":["'${RDS_DNS}'"],"portNumber":["3001"],"localPortNumber":["3002"]}'
+aws --profile ${PROFILE} ssm start-session \
+    --target ${INSTANCE_ID} \
+    --document-name AWS-StartPortForwardingSessionToRemoteHost \
+    --parameters '{"host":["'${RDS_DNS}'"],"portNumber":["3001"],"localPortNumber":["3002"]}'
+
+exit 0
