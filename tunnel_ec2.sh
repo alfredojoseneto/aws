@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. instance_id.sh
+. scripts/instance_id.sh
 
 tunnel_ec2() {
     profile="${1}"

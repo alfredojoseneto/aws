@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # importing scripts
-. instance_id.sh
+. scripts/instance_id.sh
 
 stop() {
 

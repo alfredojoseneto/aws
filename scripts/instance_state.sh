@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # import scripts
-. instance_id.sh
+. scripts/instance_id.sh
 
 retrieve_state() {
     profile="${1}"
