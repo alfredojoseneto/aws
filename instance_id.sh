@@ -5,7 +5,7 @@ retrieve_id(){
     id=$(\
         aws --profile "${profile}" ec2 describe-instances \
         --filter "Name=tag:Name,Values=${instance_name}" \
-        --query "Reservations[].Instances[?State.Name == 'running'].InstanceId[]" \
+        --query "Reservations[].Instances[].InstanceId[]" \
         --output "text" \
     )
     echo "${id}"
