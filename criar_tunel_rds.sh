@@ -5,7 +5,7 @@ RDS_NAME=${3}
 
 # verify if the parameteres was inputed
 if [[ -z ${PROFILE} || -z ${INSTANCE_NAME} || -z ${RDS_NAME} ]]; then
-    echo "Primeiro argumento 'PROFILE' ou Segundo argumento 'INSTANCE_NAME' ou Terceiro argumento 'RDS_NAME' não foi informado"
+    echo ">[ERRO] Primeiro argumento 'PROFILE' ou Segundo argumento 'INSTANCE_NAME' ou Terceiro argumento 'RDS_NAME' não foi informado"
     exit 1
 fi
 
@@ -19,7 +19,7 @@ INSTANCE_ID=$(\
 
 # verify if the instance id was found
 if [[ -z ${INSTANCE_ID} ]]; then
-    echo "Instância ${INSTANCE_NAME} não foi encontrada"
+    echo ">[ERRO] Instância ${INSTANCE_NAME} não foi encontrada"
     exit 1
 fi
 

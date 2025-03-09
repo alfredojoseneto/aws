@@ -2,15 +2,8 @@
 PROFILE=${1}
 INSTANCE_NAME=${2}
 
-if [[ -z ${1} ]]; then
-    echo "Primeiro argumento 'PROFILE' não foi informado"
-fi
-
-if [[ -z ${2} ]]; then
-    echo "Segundo argumento 'INSTANCE_NAME' não foi informado"
-fi
-
-if [[ -z ${PROFILE} || -z ${INSTANCE_NAME} ]]; then
+if [[ -z ${1} || -z ${2} ]]; then
+    echo "Primeiro argumento 'PROFILE' ou segundo argumento 'INSTANCE_NAME' não foi informado"
     exit 1
 fi
 
@@ -30,3 +23,5 @@ echo "Instância encontrada"
 echo "PROFILE: ${PROFILE}"
 echo "INSTANCE_NAME: ${INSTANCE_NAME}"
 echo "INSTANCE_ID: ${INSTANCE_ID}"
+
+exit 0
